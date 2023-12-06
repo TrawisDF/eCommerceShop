@@ -23,18 +23,25 @@ app.use(express.urlencoded({ extended: true }));
 //cookie parser middleware
 app.use(cookieParser());
 
-app.get("/", (req, res) => {
-  res.send("api is running");
-});
-
 const __dirname = path.resolve();
-app.use("/uploads", express.static(path.join(__dirname,"uploads")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api/products", productRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/orders", ordersRoutes);
 app.use("/api/upload", uploadRoutes);
 
+if (process.env.NODE_ENV === "production") {
+  //set static folder
+  app.use(express.static(path.join(__dirname, "frontend/build")));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("api is running");
+  });
+}
 // Add this middleware to serve static files
 
 app.get("/api/config/paypal", (req, res) =>
