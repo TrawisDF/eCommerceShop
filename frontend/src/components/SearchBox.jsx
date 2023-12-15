@@ -23,7 +23,7 @@ const SearchBox = () => {
         name="q"
         onChange={(e) => setKeyword(e.target.value)}
         value={keyword}
-        placeholder="Searc for Products . . ."
+        placeholder="Search for Products . . ."
         className="mr-sm-2 "
       ></Form.Control>
 
