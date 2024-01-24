@@ -30,7 +30,7 @@ const Order = () => {
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
   const { userInfo } = useSelector((state) => state.auth);
-  console.log('Admin status',userInfo.isAdmin)
+  console.log("Admin status", userInfo.isAdmin);
   const {
     data: paypal,
     isLoading: loadingPaypal,
@@ -217,14 +217,13 @@ const Order = () => {
                       >
                         Test Pay Order
                       </Button>
-                      <div>
-                        <PayPalButtons
-                          createOrder={createOrder}
-                          onApprove={onApprove}
-                          onError={onError}
-                          debug={true}
-                        ></PayPalButtons>
-                      </div>
+
+                      <PayPalButtons
+                        createOrder={createOrder}
+                        onApprove={onApprove}
+                        onError={onError}
+                        debug={true}
+                      ></PayPalButtons>
                     </div>
                   )}
                 </ListGroup.Item>
