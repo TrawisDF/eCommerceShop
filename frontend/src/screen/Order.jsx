@@ -217,7 +217,7 @@ const Order = () => {
                       >
                         Test Pay Order
                       </Button>
-
+                    {/* pls dont put this in div surely */}
                       <PayPalButtons
                         createOrder={createOrder}
                         onApprove={onApprove}
