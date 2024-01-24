@@ -211,14 +211,14 @@ const Order = () => {
                     <Loader />
                   ) : (
                     <div>
-                      <Button
+                      {/* <Button
                         onClick={onApproveTest}
                         style={{ marginBottom: "10px" }}
                       >
                         Test Pay Order
-                      </Button>
+                      </Button> */}
                     {/* pls dont put this in div surely */}
-                      <PayPalButtons
+                      <PayPalButtons 
                         createOrder={createOrder}
                         onApprove={onApprove}
                         onError={onError}
