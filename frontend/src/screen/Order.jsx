@@ -178,6 +178,8 @@ const Order = () => {
             </ListGroup.Item>
           </ListGroup>
         </Col>
+
+        {/* the Right side bar contains all of payment method */}
         <Col md={4}>
           <Card>
             <ListGroup variant="flush">

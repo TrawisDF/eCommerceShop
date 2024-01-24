@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
@@ -23,20 +23,20 @@ const PlacOrderScreen = () => {
     }
   }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
   const placeOrderHandler = async () => {
-    try{
+    try {
       const res = await createOrder({
-        orderItems:cart.cartItems,
-        shippingAddress:cart.shippingAddress,
-        paymentMethod:cart.paymentMethod,
-        itemsPrice:cart.itemsPrice,
-        shippingPrice:cart.shippingPrice,
-        taxPrice:cart.taxPrice,
-        totalPrice:cart.totalPrice
-      }).unwrap()
-      dispatch(clearCartItems())
-      navigate(`/order/${res._id}`)
-    }catch(error){
-      toast.error(error)
+        orderItems: cart.cartItems,
+        shippingAddress: cart.shippingAddress,
+        paymentMethod: cart.paymentMethod,
+        itemsPrice: cart.itemsPrice,
+        shippingPrice: cart.shippingPrice,
+        taxPrice: cart.taxPrice,
+        totalPrice: cart.totalPrice,
+      }).unwrap();
+      dispatch(clearCartItems());
+      navigate(`/order/${res._id}`);
+    } catch (error) {
+      toast.error(error);
     }
   };
 
@@ -129,15 +129,17 @@ const PlacOrderScreen = () => {
                   </Col>
                 </Row>
               </ListGroup.Item>
-              {error?(<Message variant ='danger'>{error}</Message>):(null)}
+              {error ? <Message variant="danger">{error}</Message> : null}
               <ListGroup.Item>
                 <Button
                   type="button"
                   className="btn-block"
                   disabled={cart.cartItems.length === 0}
                   onClick={placeOrderHandler}
-                >Place Order!</Button>
-                {isLoading &&(<Loader></Loader>)}
+                >
+                  Place Order!
+                </Button>
+                {isLoading && <Loader></Loader>}
               </ListGroup.Item>
             </ListGroup>
           </Card>
