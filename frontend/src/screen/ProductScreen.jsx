@@ -80,7 +80,6 @@ const ProductScreen = () => {
           <Row>
             <Col md={5}>
               <Image src={product.image} alt={product.name} fluid></Image>
-              <p>{product.image}</p>
             </Col>
             <Col md={4}>
               <ListGroup>
