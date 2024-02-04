@@ -48,7 +48,7 @@ const CartScreen = () => {
                       fluid
                       rounded
                     ></Image>
-                    <p>{item.image}</p>
+
                   </Col>
                   <Col md={3}>
                     <Link to={`/product/${item._id}`}>{item.name}</Link>
