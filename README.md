@@ -4,6 +4,9 @@ From MERN stack from scratch course. I have learned from an empty folder until I
 
 https://e-commerceshop-v2.onrender.com
 
+## Example
+![eCom](https://github.com/TrawisDF/eCommerceShop/assets/134593322/02ea12e1-22d9-478b-8dda-6a27b94b5e22)
+
 ## Features
 
 - Full-featured shopping cart with quantity<br/>
