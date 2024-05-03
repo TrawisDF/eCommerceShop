@@ -1,5 +1,5 @@
 # eCommercShop 2023
-
+        this website was builded for learing only, not work for any profit or any merchandise 
 From MERN stack from scratch course. I have learned from an empty folder until I really can deploy this project on render.com, which is free for hosting, so it's unavoidable to have access downtime. (it takes time about 30 seconds to open this web) <br/>
 
 ## Links
